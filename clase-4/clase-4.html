@@ -31,7 +31,27 @@
         <ul>
             <li><b>Alcance Global:</b> Son variables que están declaradas fuera de una función o fuera de cualquier bloque de instrucciones que se cierra con llaves, lo que <b>permite acceder a ella</b> desde cualquier bloque de instrucciones.</li>
             <li><b>Alcance Local:</b> Cuando una variable es declarada dentro de una función, no es posible acceder a ella desde otro lugar del código.</li>
+            <li>Es posible repetir el nombre de una variable si una es global y otra es Local</li>
         </ul>
+        <h3>Función Anónima</h3>
+        <p>Es una función que se define sin nombre y se utiliza para ser pasada <b>por parámetro</b> o asignada a una variable</p>
+        <ul>
+            <li>Las funciones pueden recibir como parámetros <b>otras funciones</b></li>
+        </ul>
+        <h4>Estructura de una función anonima</h4>
+        <code>let sumaAnonima = function (a, b){return a + b}<br>
+            console.log(sumaAnonima(1000,1000)); 
+        </code>
+        <h3>Función flecha</h3>
+        <p>Identificamos a las funciones flecha como funciones anónimas de sintáxis simplificada.</p>
+        <h4>Estructura de una función flecha</h4>
+        <code>let division = (a,b) => {<br>
+            return a/ b;<br>
+        }<br>
+        console.log(division(100,10)); </code>
+        <p>También es posible simplificarlo, eliminando el return, que queda implícito al eliminar las llaves</p>
+        <code>let multiplicacion = (a,b) => a * b; </code>
+        <span>Las funciones pueden tener uno o más de 2 parámetros, hasta al rededor de 255 parámetros diferentes.</span>
         <hr>
         <h4><a href="../index.html">Volver al Index</a></h4>
         <hr>

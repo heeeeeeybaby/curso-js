@@ -54,4 +54,30 @@ ejemploA();
 function ejemploB(){
     let resultadoEjemploB = 10 + 10; 
 }
-console.log(resultadoEjemploB); 
+//console.log(resultadoEjemploB); 
+
+/****************FUNCIONES ANONIMAS*******************/
+
+let sumaAnonima = function (a, b){return a + b}
+console.log(sumaAnonima(1000,1000)); 
+
+let restaAnonima = function(a,b){return a - b}
+console.log(restaAnonima(10000,sumaAnonima(1000,1000)));
+
+/****************FUNCIONES FLECHA*******************/
+
+let division = (a,b) => {
+    return a/ b;
+}
+console.log("División con funcion flecha: "); 
+console.log(division(100,10)); 
+
+// Ejemplo Multiplicación 
+console.log("Mulitiplicación con función flecha:");
+let multiplicacion = (a,b) => a * b; 
+// El return está implícito porque no estoy implementando llaves.
+console.log(multiplicacion(50,50));
+
+// Función con un solo parámetro
+let nombre = nombre => console.log("Hola" + nombre); 
+nombre("pepelepuf"); 

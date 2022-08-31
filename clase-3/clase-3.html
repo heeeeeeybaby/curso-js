@@ -10,6 +10,7 @@
     <body>
         <h1>Clase 3 - Ciclos</h1>
         <button><a target="_blank" href="ejercicios-3.html">Ejercicios de la Clase</a></button>
+        <button><a target="_blank" href="calculadora.html">Ejercicio de la Calculadora</a></button>
         <h3>¿Qué es un ciclo?</h3>
         <p>Los ciclos son herramientas que nos permiten repetir un bloque de instrucciones cierta cantidad de veces. Se dividen en dos categorías: </p>
         <ul>
@@ -33,10 +34,14 @@
         </span>
         <h3>Ciclos <code>While</code></h3>
         <p>El ciclo <code>while</code> es un ciclo que se ejecuta mientras la condición evaluada <b>sea verdadera.</b></p>
+        <ul>
+            <li>Primero ejecutará lo que está en <code>do</code> y luego comprobará si es verdadero o falso la sentencia del <code>while</code></li>
+            <li>Si la condición de <code>while</code> es <b>falsa</b>, ejecutará nuevamente lo indicado en la sección del <code>do</code></li>
+        </ul>
         <h4>Estructura</h4>
         <code>while(nombre != "salir"){<br>
             nombre = prompt("Ingrese un nombre: (Para salir ingrese salir)")<br>
-            }</code>
+        }</code>
             <h3>Ciclos <code>Do While</code></h3>
             <p>Este tipo de ciclo, se diferencia del <code>while</code> porque ejecutará primero el código y <b>después evalúa</b> para saber si sigue ejecutando el código.</p>
             <h4>Estructura</h4>
@@ -46,7 +51,18 @@
                 }while(passUsuario != passAutorizado);
             </code>
             <h3>Estructura Switch</h3>
-            <p><b>No es un ciclo.</b> </p>
+            <p>Está especialmente diseñada para manejar de forma sencilla, múltiples condiciones sobre la misma variable. <b>No es un ciclo.</b></p>
+            <ul>
+                <li>Se utiliza la palabra reservada <code>case</code> para crear uno de los casos que suponemos ocurrirá, después de cada <code>case</code>, debemos agregar un <code>break;</code> sino ejecutará todos los casos hacia abajo.</li>
+                <li>Se utiliza el <code>default</code> para dar una respuesta a todos aquellos casos que no coincidan con las respuestas previstas anteriormente.</li>
+            </ul>
+
+            <h4>Estructura</h4>
+            <code>switch (clima){<br>
+            case "lluvia": <br>
+            console.log("Mirá Netflix"); <br>
+            break; <br>
+            }</code>
         <hr>
         <h4><a href="../index.html">Volver al Index</a></h4>
         <hr>

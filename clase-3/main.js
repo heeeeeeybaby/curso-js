@@ -101,3 +101,23 @@ do{
     passUsuario = prompt("Ingrese su contraseña");
 }while(passUsuario != passAutorizado);
 
+/*****ESTRUCTURA SWITCH*****/
+
+let clima = prompt("Ingrese el clima de su ciudad: "); 
+
+switch (clima){
+    case "lluvia": 
+    console.log("Mirá Netflix"); 
+    break; 
+    case "nublado": 
+    console.log("Un asadito?"); 
+    break; 
+    case "soleado": 
+    console.log("Vamos a la playa"); 
+    break; 
+    case "frío": 
+    console.log("A mimir"); 
+    break; 
+    default: 
+    console.log("Qué pusiste? Escribe bien"); 
+}

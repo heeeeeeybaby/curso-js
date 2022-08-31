@@ -65,3 +65,39 @@ for (let i = 0; i < 2; i++){
         }
     }
 }
+
+//SENTENCIA CONTINUE
+//Ejemplo F. muestro los números del 0 al 6 pero saltando los números pares. 
+
+console.log("Ejemplo F:");
+
+for(let i = 0; i <= 6; i++){
+    if(i % 2 == 0){
+        continue; // Se salta todos los números que cumplen con la condición de que resto == 0. 
+    }
+    console.log(i);
+}
+
+/*****CICLOS WHILE*****/
+
+//Ejemplo G. 
+console.log("Ejemplo G:"); 
+let nombre = prompt("Ingrese un nombre: (Para salir ingrese salir)");
+
+while(nombre != "salir"){
+    console.log(nombre);
+    nombre = prompt("Ingrese un nombre: (Para salir ingrese salir)")
+    }
+
+    /*****CICLOS DO WHILE*****/
+
+// Ejemplo H. 
+console.log("Ejemplo H:"); 
+
+const passAutorizado = 1234; 
+let passUsuario;
+
+do{
+    passUsuario = prompt("Ingrese su contraseña");
+}while(passUsuario != passAutorizado);
+

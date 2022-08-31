@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>Clase 3 - Ciclos</h1>
-        <button><a href="ejercicios-3.html">Ejercicios de la Clase</a></button>
+        <button><a target="_blank" href="ejercicios-3.html">Ejercicios de la Clase</a></button>
         <h3>¿Qué es un ciclo?</h3>
         <p>Los ciclos son herramientas que nos permiten repetir un bloque de instrucciones cierta cantidad de veces. Se dividen en dos categorías: </p>
         <ul>
@@ -26,10 +26,27 @@
             <li>El alcance de <code>i</code> es sólo dentro del ciclo for, es una <b>variable auxiliar</b> que nace y muere dentro de ese ciclo.</li>
             <li>Cuando digo: <code>i = i + 1</code> es lo mismo que decir: <code>i++</code></li>
             <li>Cuando digo: <code>i = i - 1</code> es lo mismo que decir: <code>--i</code></li>
-            <li>Sentencia Break: me permite interrumpir el ciclo.</li>
+            <li><b>Sentencia Break:</b>  me permite interrumpir el ciclo.</li>
+            <li><b>Sentencia Continue:</b> me permite saltar una iteración del ciclo, si se ocupa dentro de un if, se saltará el valor que cumpla con la condición del if.</li>
         </ul>
         <span><b>De la documentación de MDN:</b> <br>Si usamos la forma de sufijo, operador después del operando (por ejemplo, <code>x--</code> ), el operador de disminución disminuye y devuelve el valor antes de disminuir. <br> Si se usamos la forma de prefijo, operador antes del operando (por ejemplo, <code>--x</code>), el operador de disminución disminuye y devuelve el valor después de disminuir.
         </span>
+        <h3>Ciclos <code>While</code></h3>
+        <p>El ciclo <code>while</code> es un ciclo que se ejecuta mientras la condición evaluada <b>sea verdadera.</b></p>
+        <h4>Estructura</h4>
+        <code>while(nombre != "salir"){<br>
+            nombre = prompt("Ingrese un nombre: (Para salir ingrese salir)")<br>
+            }</code>
+            <h3>Ciclos <code>Do While</code></h3>
+            <p>Este tipo de ciclo, se diferencia del <code>while</code> porque ejecutará primero el código y <b>después evalúa</b> para saber si sigue ejecutando el código.</p>
+            <h4>Estructura</h4>
+            <code>
+                do{<br>
+                    passUsuario = prompt("Ingrese su contraseña");<br>
+                }while(passUsuario != passAutorizado);
+            </code>
+            <h3>Estructura Switch</h3>
+            <p><b>No es un ciclo.</b> </p>
         <hr>
         <h4><a href="../index.html">Volver al Index</a></h4>
         <hr>

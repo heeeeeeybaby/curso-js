@@ -16,5 +16,6 @@ hr:first-of-type{
 span{
     display:block;
     background-color: lightgray;
+    margin-top: 2rem;
     padding: 2rem 1rem; 
 }

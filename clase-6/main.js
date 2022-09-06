@@ -39,3 +39,39 @@ console.log("Valor eliminado " + eliminado);
 // Método Shift
 let primerEliminado = familia.shift();
 console.log("primer eliminado: " + primerEliminado); 
+
+// Método Splice 
+familia.splice(2,2); 
+console.log(familia); 
+
+// También puedo hacer que los elementos eliminados de un array queden en unaa variable. 
+familia.push("Mishi 1", "Mishi 2"); 
+let eliminadosSplice = familia.splice(2,2); 
+console.log(familia); 
+
+// Método Join
+let stringFamilia = familia.join(","); 
+console.log(stringFamilia); 
+
+// Método Concat
+let familiaUnidaOtraVez = familia.concat(eliminadosSplice); 
+console.log("Familia Unida: " + familiaUnidaOtraVez); 
+
+//Método Slice
+let slice = familiaUnidaOtraVez.slice(0,2); 
+console.log("Método Slice: "); 
+console.log(slice); 
+
+//Método indexOf
+let indicePedro = familiaUnidaOtraVez.indexOf("Pedro"); 
+console.log("Indice de Pedro: " + indicePedro); 
+
+//Método includes()
+let booleanoPedro = familiaUnidaOtraVez.includes("Pedro"); 
+console.log("Booleano: " + booleanoPedro); 
+
+// Método Reverse 
+console.log("Método Reverse"); 
+console.log(familiaUnidaOtraVez);
+familiaUnidaOtraVez.reverse(); 
+console.log(familiaUnidaOtraVez);

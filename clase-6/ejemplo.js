@@ -3,9 +3,7 @@ class Producto {
         this.nombre = nombre; 
         this.precio = precio; 
         this.cantidad = 10; 
-
     }
-
     // Métodos: 
     // Aumentar la Cantidad de un producto
     sumarStock(cantidad){

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 6 - Arrrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Clase 6 - Arrays</h1>
+    <button><a target="_blank" href="ejercicios-6.html">Ejercicios de la Clase</a></button>
+    <ul>
+        <li>Puedo ir agregando valores a un array después de declararlo</li>
+        <li>En el <code>array</code> es posible almacenar cualquier tipo de dato.</li>
+        <li>Para organizarse mejor, los elementos de un array tienen un <b>índice</b> que los identifica. Comienza <b>con el número 0</b>, hasta el último elemento del array.</li>
+        <li>Es posible mostrar el array completo, o bien, sólo un valor de todo el array, para ello se escribe: <code>console.log(nombreArray[índice]);</code></li>
+        <li><b>Nunca confundir el <code>length</code> con el índice</b></li>
+    </ul>
+    <h3>Modificar un elemento del array</h3>
+    <p>Es posible modificar sólo un elemento del array, para eso necesito saber cuál es el índice del valor que quiero modificar y luego aplico la siguiente sintaxis: <code>arrayLetras[2] = 100;</code></p>
+    <h3>Recorrer un array</h3>
+    <p>Es posible utilizar un ciclo <code>for</code> para recorrer el array completo</p>
+    <code>for(let i = 0; i < arrayLetras.length; i++){<br>
+        alert(arrayletras[i]);<br>
+    }</code>
+    <h3>Métodos y Propiedades más comunes</h3>
+    <ul>
+        <li><b>Propiedad Length:</b> Cuando lo pido en un array, me dice la cantidad de elementos</li>
+        <li><b>Método Push:</b> Me permite agregar elementos por el final del array.La estructura es: <code>nombreArray.push("Nuevo Valor");</code></li>
+        <li>Si quiero agregar elementos al inicio de un array, utilizo <code>unshift</code> La estructura es: <code>nombreArray.unshift("Nuevo Valor");</code></li>
+        <li><b>Método Pop</b> Me permite eliminar el último elemento del array. Este valor puedo almacenarlo en otra variable, por ejemplo: <code>let eliminado = familia.pop(); </code></li>
+        <li><b>Método Shift</b> Lo utilizamos para eliminar el primer elemento del arrray, por ejemplo: <code>let primerEliminado = familia.shift();</code></li>
+    </ul>
+</body>
+</html>

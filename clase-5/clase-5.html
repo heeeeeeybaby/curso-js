@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 5 - Objetos</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Clase 5 - Objetos</h1>
+    <button><a target="_blank" href="ejercicios-5.html">Ejercicios de la Clase</a></button>
+    <p>Un objeto es una <b>colección de datos</b> relacionados como una entidad, se componen de un listado de pares <code>clave-valor</code>, es decir tiene <b>propiedades</b> y <b>valores</b></p>
+    <ul>
+        <li>La gracia de los objetos es que me permite englobar un montón de propiedades y valores bajo una misma <b>entidad</b></li>
+        <li>Se llama <b>Objeto Literal</b> cuando creamos un objeto escribiendo cada valor para cada propiedad "a mano".</li>
+    </ul>
+    <h4>Estructura</h4>
+    <code>
+        let alumnoSamuel = {<br>
+            nombre: "Samuel",<br>
+            apellido: "Tocaimaza",<br>
+            edad: 35<br>
+        };
+    </code>
+    <h3>Cómo accedemos a cada dato?</h3>
+    <p>Utilizo el nombre del objeto y luego el <code>.</code> punto, y de esta manera accedo al valor de esa propiedad dentro del objeto seleccionado</p>
+    <code>
+        console.log(alumnoSamuel.edad);
+    </code>
+    <p>También es posible acceder a un valor utilizando corchetes e indicando el nombre de la propiedad dentro</p>
+    <code>
+        console.log(perro["raza"]);
+    </code>
+    <h3>Asignar nuevos valores a propiedades</h3>
+    <p>Para modificar un valor dentro de un objeto, simplemente me refiero a esa propiedad que quiero modificar e ingreso el nuevo valor tal cual se modifica una variable</p>
+    <code>
+        auto.precio = 40000000; 
+    </code>
+    <ul>
+        <li>Es posible modificar valores dentro de un objeto que sea asignado a una constante. Porque la referencia al objeto <b>nunca se modifica</b> pero sí sus propiedades, por lo que deberíamos trabajar los objetos como <b>constantes</b>
+            <ul>
+                <li>
+                    <code>
+                        console.log(yerba);<br>
+                        // 350<br>
+                        yerba.precio = 400;<br>
+                        console.log(yerba);<br> 
+                        // 400
+                    </code>
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+    <span>
+        Cuando trabajamos con valores: <code>number, string, boolean, null</code>. Estos se denominan <b>valores primarios</b> y accedemos directamente al valor. Pero, cuando trabajamos con Objetos, accedemos a una <b>referencia</b> de ese valor, por eso es que nos permite entrar y modificar las propiedades a pesar de declararse con <code>const</code>
+    </span>
+    <h3>Constructores</h3>
+    <p>Es una función que usamos para crear un nuevo objeto cada vez que sea necesario, es como un molde.</p>
+    <ul>
+        <li>Se utiliza el <code>function</code> para crearla y el nombre de esta, por convención lleva mayúscula la primera letra.</li>
+        <li>La palabra reservada <code>this</code> al crear un nuevo objeto, lo que estoy diciendo es referenciar a dónde se guardará la variable que se toma en la función</li>
+        <li>La palabra reservada <code>new</code> permite generar un nuevo objeto asignado a una constante, con sus debidos valores</li>
+        <li>Es posible pedir los valores del objeto mediante <code>prompt</code></li>
+        <li>Las funciones en JS son generalmente <b>de acceso global</b> y los <b>métodos</b> son únicamente utilizados para <b>ser invocados</b> por los objetos que lo contienen.</li>
+
+    </ul>
+    <h4>Estructura</h4>
+    <code>
+        function Persona(nombre, apellido, edad){<br>
+            this.nombre = nombre; <br>
+            this.apellido = apellido; <br>
+            this.edad = edad; <br>
+        }<br>
+        const persona1 = new Persona("Santiago", "Tocaimaza", 9); 
+    </code>
+    <span>Cuando creamos funciones que trabajan directamente con los datos de un objeto, estas reciben el nombre de <b>método</b></span>
+    <h3>Clases</h3>
+    <p>Las clases de JS, introducidas en la última versión, preveen de una sintaxis más clara y simple para crear objetos. Son un <b>equivalente</b> al empleo de la <b>función constructora</b> y permite definir distintos tipos de métodos.</p>
+    <h4>Estructura</h4>
+    <code>
+        class Producto{<br>
+            constructor(nombre, precio){<br>
+                this.nombre = nombre; <br>
+                this.precio = precio; <br>
+                this.vendido = false; <br>
+            }
+            // Esto es un método dentro de la clase producto <br>
+            sumaIva(){<br>
+                return this.precio * 1.19.toFixed(2); <br>
+            }<br>
+            vender() {<br>
+                this.vendido = true; <br>
+            }<br>
+        }
+    </code>
+    <hr>
+    <h4><a href="../index.html">Volver al Index</a></h4>
+    <hr>
+</body>
+</html>

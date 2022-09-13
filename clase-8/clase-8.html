@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 8 - DOM</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1 id="tituloPrincipal">Clase 8 - DOM</h1>
+
+    <h3>Get Element by Class</h3>
+
+    <p class="nombres">Carlos</p>
+    <p class="nombres">María</p>
+    <p class="nombres">Juan</p>
+
+    <h3>Get Element by Tag</h3>
+    <p>Esta es la opción menos específica y menos recomendada, ya que agarra la etiqueta de HTML seleccionada de forma genérica</p>
+    <ul>
+        <li>Enero</li>
+        <li>Febrero</li>
+        <li>Marzo</li>
+    </ul>
+
+    <h3>querySelector</h3>
+    <p>Este método nos permite seleccionar nodos con la misma sintaxis que usamos en CSS</p>
+    <ul>
+        <li>Retorna el primero de los elementos que encuentra basado en la selección que le entregué </li>
+        <li>Para seleccionar <b>todos</b> los elementos que coincidan bajo la búsqueda, debemos utilizar <code>querySelectorAll();</code></li>
+    </ul>
+
+    <h3>Modificar nodos</h3>
+    <p>Es posible modificar nodos con las propiedades <code>InnerText</code>, <code>InnerHtml</code>, <code>ClassName</code></p>
+    <ul>
+        <li><code>innerText</code>: Me permite acceder al contenido textual de algún elemento del DOM</li>
+        <li><code>innerHtml</code>: Me permite definir el <b>código html interno</b> y generará nuevos nodos con su contendio dentro del elemento seleccionado. 
+        </li>
+        <li><code>className</code>: Me permite agregar una nueva clase a un elemento</li>
+    </ul>
+
+    <h3>Agregar Nodos</h3>
+    <p>Puedo ocupar el método <code>createElement();</code> donde se agrega como parámetro, el nombre de la etiqueta html que necesito agregar</p>
+    <ul>
+        <li>Para crear el nuevo elemento dentro de otro, debo pasar el elemento como <code>const</code></li>
+        <li>Luego se crea el nuevo elmento en una constante nueva con <code>createElement();</code></li>
+        <li>Para enlazar el nuevo elemento al interior del otro, se utiliza <code>appendChild();</code></li>
+    </ul>
+
+    <h3>Eliminar Nodos</h3>
+    <p>Se utiliza <code>remove();</code> para eliminar un elemento del DOM.</p>
+    <div id="_contenedor"class="contenedor"></div>
+
+    <h3>Modificar el DOM par mostrar arrays</h3>
+    <ul id="_listaPersonas"></ul>
+
+    <h3>Modificar el DOM par mostrar objetos</h3>
+    <div id="_contenedorProductos"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 7 - Funciones de Orden Superior</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Funciones de Orden Superior</h1>
+    <button><a target="_blank" href="ejercicios-7.html">Ejercicios de la Clase</a></button>
+    <p>Significa escribir funciones que puedan recibir funciones por parámetro</p>
+    <h3>Una función que devuelve otra función</h3>
+    <h4>Estructura</h4>
+    <code>
+        let arrayPersonas = ["Carlos", "Lucas", "Federico", "Natalia", "María"];<br>
+        <br>
+        function muestraNombreEnMayuscula(array, funcion){<br>
+            for(let nombre of array){<br>
+                funcion(nombre); <br>
+            }<br>
+        }<br>
+        <br>
+        function pasarMayuscula(nombre){<br>
+            return console.log(nombre.toUpperCase()); <br>
+        }<br>
+        <br>
+        muestraNombreEnMayuscula(arrayPersonas, pasarMayuscula); 
+    </code>
+    <h3>Métodos de búsqueda y transformación</h3>
+    <p>Javascript incluye de forma nativa <b>varias funciones de orden superior</b>, tenemos métodos de búsqueda y transformación que nos permiten operar sobre arrays que contienen objetos.</p>
+    <ul>
+        <li><b>ForEach:</b> Recorre el array y </li>
+    </ul>
+    <hr>
+    <h4><a href="../index.html">Volver al Index</a></h4>
+    <hr>
+</body>
+</html>

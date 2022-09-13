@@ -82,3 +82,18 @@ arrayProductos.forEach(producto => {
                     <button>Agregar al carrito</button>`;
     contenedorProductos.appendChild(div); 
 });
+
+// Usando Boostrap 
+
+const contenedorProductosBS = document.getElementById("_contenedorProductosBS"); 
+
+arrayProductos.forEach(producto => {
+    let div = document.createElement("div"); 
+    div.className= "card"; 
+    div.innerHTML =     `<div class="card-body col-3">
+                            <h5 class="card-title">${producto.nombre}</h5>
+                            <p class="card-text">${producto.precio}</p>
+                            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                        </div>`;
+    contenedorProductosBS.appendChild(div); 
+});

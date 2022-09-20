@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-CL">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,30 @@
 <body>
     <h1>Funciones de Orden Superior</h1>
     <button><a target="_blank" href="ejercicios-7.html">Ejercicios de la Clase</a></button>
-    <p>Significa escribir funciones que puedan recibir funciones por parámetro</p>
+    <button><a target="_blank" href="blockbuster.html">Ejercicio Blockbuster</a></button>
+    <p>Una <b>función de orden superior</b> es una función que trabaja con otras funciones, es decir que puede recibir porparámetro una función o retornar una función.</p>
     <h3>Una función que devuelve otra función</h3>
+    <p>Este es un ejemplo de una función de orden superior que <b>retorna otra función</b></p>
+    <h4>Estructura</h4>
+    <code>
+        function crearSaludo(finalDeFrase){<br>
+            return function(nombre){<br>
+                console.log("Hola " + nombre + " " + finalDeFrase);<br>
+            }<br>
+        }<br>
+        // saludoArgentino almacena ahora una función<br>
+        const saludoArgentino = crearSaludo("che");<br>
+        saludoArgentino("Juan");
+    </code>
+
+    <h3>Función de orden superior que recibe una función por parámetro</h3>
+    <p>En este caso, la primera función llama a una segunda función como parámetro y al llamar a esa misma función, en su interior puede llevar una función simple como prompt u otra.</p>
+    <ul>
+        <li>La función parte cuando se la invoca, esto es: <code>muestraNombreEnMayuscula(arrayPersonas, pasarMayuscula);</code></li>
+        <li>Cuando eso pasa, comienza a leer la primera función, que recorre el array que viene del parámetro</li>
+        <li>Luego, llega recién a leer <code>funcion(nombre)</code> y ahí dice: De dónde saco esto? y vuelve a leer la variable que entra por parámetro: <code>pasarMayuscula</code></li>
+        <li>Con eso, ya puede comenzar a pasar cada uno de los nombres del array a mayúsculas</li>
+    </ul>
     <h4>Estructura</h4>
     <code>
         let arrayPersonas = ["Carlos", "Lucas", "Federico", "Natalia", "María"];<br>
@@ -28,11 +50,99 @@
         <br>
         muestraNombreEnMayuscula(arrayPersonas, pasarMayuscula); 
     </code>
+    <span><code>toUpperCase()</code> Convierte los strings en mayúsculas</span>
+
     <h3>Métodos de búsqueda y transformación</h3>
-    <p>Javascript incluye de forma nativa <b>varias funciones de orden superior</b>, tenemos métodos de búsqueda y transformación que nos permiten operar sobre arrays que contienen objetos.</p>
+    <p>Javascript incluye de forma nativa <b>varias funciones de orden superior</b>, tenemos métodos de búsqueda y transformación que nos permiten operar sobre arrays que contienen objetos. Vamos a trabajar estos métodos con Array de objetos.</p>
+    <span>Es necesario almacenar los objetos en un array para poder trabajarlos, es como una unidad base, sobre todo si quiero por ejemplo, trabajar con un carrito de compras. </span>
     <ul>
-        <li><b>ForEach:</b> Recorre el array y </li>
+        <li><b>ForEach:</b> Recorre el array y ejecuta una función por cada elemento de este.<br>
+        <b>Estructura:</b><code>
+            arrayProductos.forEach((producto) => {<br>
+                console.log(producto); <br>
+            });
+        </code>
+        </li>
+        <li><b>Find:</b> Busca un elemento en el array y retorna <b>el primer</b> elemento que cumpla con la condición, si no encuenra ningún valor, retornará <code>undefined</code><br>
+        <b>Estructura:</b><code>
+            const buscado = arrayProductos.find(producto => producto.nombre ==="Coca Cola");<br> 
+            console.log(buscado); 
+        </code>
+        </li>
+        <li><b>Filter:</b> Recibe una función comparadora por parámetro y retorna un nuevo array con los elementos <b>que cumplan</b> con la condición. Si no hay coincidencia retorna un array vacío.<br>
+        <code>
+            const arrayProductosMenos200 = arrayProductos.filter(producto => producto.precio &lt; 200); <br>
+            console.log(arrayProductosMenos200); 
+        </code>
+        </li>
+        <li><b>Some:</b> Funciona igual que el filter, con la diferencia de que retorna <b>un booleano</b>, es decir, <code>true</code> o <code>false</code> si encuentra o no el elemento. <br>
+        <code>
+            const hayFideos = arrayProductos.some(producto => producto.nombre === "Fideos"); <br>
+            console.log("¿Hay fideos?, Lo averiguamos con el método some: " + hayFideos); 
+        </code>
+        </li>
+        <li><b>Map:</b> Me permite crear un nuevo array con todos los elementos del original <b>pero transformados</b> Esto me sirve por ejemplo, para tomar todos los productos y rebajarles un 10% al precio, o sumarle el IVA a un array de productos ya existente, creando uno nuevo pero con el IVA incluido. <br>
+        <code>
+            const arrayProductosConIva = arrayProductos.map((producto) => { <br>
+                return { <br>
+                    nombre: producto.nombre, <br>
+                    precio: producto.precio * 0.21 <br>
+                } <br>
+            });
+        </code>
+        </li>
+        <li><b>Reduce:</b> Nos permite obtener un único valor, después de iterar sobre un array, por ejemplo: el total de un carrito de compras. A diferencia de los métodos anteriores, este método recibe más parámetros: <b>Un acumulador</b> y el <b>elemento a operar</b>, también debemos colocar el valor inicial del acumulador. Si se utilizan <code>string</code> el valor final, se <b>concatenará.</b> <br> 
+        <code>
+            let totalPrecio = arrayProductos.reduce((acumulador, elemento) => acumulador + elemento.precio, 0); <br>
+            console.log(totalPrecio); 
+        </code>
+        </li>
+        <li><b>Sort:</b> Me permite reordenar un arrat según un criterio que definamos nosotros, ej. de menor a mayor, o de mayor a menor. Esto es un <b>método destructivo</b>, es decir, me modifica el array original. No crea un nuevo array. <br>
+            <b>Ordenar números de menor a mayor</b>
+        <code> <br>
+            const numeros = [99, 58, 74, 8, 23]; <br>
+            numeros.sort((a,b) => a - b); <br>
+            console.log(numeros); 
+        </code>
+        <br>
+            <b>Ordenar números de mayor a menor</b>
+        <code> <br>
+            const numeros = [99, 58, 74, 8, 23]; <br>
+            numeros.sort((a,b) => b - a); <br>
+            console.log(numeros); 
+        </code>
+        </li>
     </ul>
+    <span>Cuando una función flecha recibe un único parámetro, se le puede eliminar los paréntesis.</span>
+    <h3>Objeto Math</h3>
+    <p>El objeto math contiene una serie de métodos que me permiten realizar operaciones matemáticas</p>
+    <ul>
+        <li><b>Valor Pi</b> Es posible acceder al valor pi con el objeto math, utilizando <code>Math.PI</code></li>
+        <li><b>Constante Euler</b> No sabemos para qué pero también es posible acceder a esta constante utilizando <code>Math.E</code></li>
+        <li><b>Mínimo y máximo</b> En una serie de valores, nos permite encontrar el valor mínimo entre una serie de números utilizando <code>Math.min()</code> o el máximo con: <code>Math.max()</code></li>
+        <li><b>Ceil:</b>Devuelve el entero mayor o igual más próximo, se utiliza como: <code>Math.ceil()</code></li>
+        <li><b>Floor:</b> Devuelve el entero redondeado para abajo, se utiliza con: <code>Math.floor()</code></li>
+        <li><b>Round:</b> Redondea al entero más cercano, se utiliza con: <code>Math.round()</code></li>
+        <li><b>Square root:</b> Permite calcular la raíz cuadrada de un número con: <code>Math.sqrt()</code></li>
+        <li><b>Random:</b> Me permite generar un número al azar. Por defecto es entre 0 y 1. Se utiliza: <code>Math.random()</code> pero también es posible darle un rango para que genere un número.</li>
+    </ul>
+    <h3>Clase Date</h3>
+    <p>Me permite trabajar con fechas, puedo configurar una fecha diferente, con año, mes y día pero ojo: <b>Enero es el mes 0 y Diciembre el mes 11</b></p>
+    <ul>
+        <li><b>Fecha Actual:</b> Me permite ver, fecha y hora exacta, con huso horario, con: <code>new Date();</code></li>
+        <li><b>Fecha con Formato:</b> Me permite colocar una fecha específica con: <code>new Date(2021,8,12);</code> donde el orden es: <b>Año, mes, día</b> o bien, con un string como: <code>new Date("Septiembre 12, 2023 08:00"); </code></li>
+        <li><b>Ver el día:</b> También es posible pedir el día de una fecha específica con <code>getDay()</code> pero esto me trae <b>1</b> para día Lunes y <b>7</b> para Domingo</li>
+        <li><b>Ver el mes:</b> Obtiene el número del mes de una fecha determinada con: <code>getMonth();</code></li>
+    </ul>
+    <h4>Distintos formatos de fecha</h4>
+    <ul>
+        <li><code>let fecha = new Date(); </code></li>
+        <li><code>fecha.toDateString()</code>, muestra: <b>Mon Sep 19 2022</b></li>
+        <li><code>fecha.toLocaleString()</code>, muestra: <b>19/9/2022, 23:56:13</b></li>
+        <li><code>fecha.toLocaleDateString()</code>, muestra: <b>19/9/2022</b></li>
+        <li><code>fecha.toTimeString()</code>, muestra: <b>23:56:13 GMT-0300 (hora de verano de Chile)</b></li>
+    </ul>
+
     <hr>
     <h4><a href="../index.html">Volver al Index</a></h4>
     <hr>

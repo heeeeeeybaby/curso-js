@@ -26,7 +26,7 @@
     <p>Lo que dice es: Si la variable nombreCliente es estrictamente igual a "Samuel", entonces, ejecuta el alert. Sino, el código no se ejecuta.</p>
     <code>nombreCliente === "Samuel" && alert("Bienvenido Samuel"); </code>
 
-    <h3>Operador Lógico || OR</h3>
+    <h3>Operador Lógico <code>||</code> OR</h3>
     <p>Ahora trabajamos con dos operandos y ya no tenemos una condición explícita. Entonces devuelve el primer valor que sea verdadero</p>
     <ul>
         <li>Lo podemos utilizar para pedir datos al usuario, por ejemplo: <br><code>let nombre = prompt("Ingrese su nombre:"); <br>
@@ -34,7 +34,7 @@
     </ul>
     <span>Tenemos que saber que en JS se denomina <b>valores "falsy"</b> a los siguientes: <code>false, 0, "", null, undefined, NaN</code></span>
 
-    <h3>Operador Nullish Coalescing</h3>
+    <h3>Operador Nullish <code>??</code> Coalescing</h3>
     <p>Es una simplificación del operador OR, trabaja igual que el OR, pero sólo admite como valores "nullish" a <code>null</code> y el <code>undefined</code></p>
     <h4>Estructura</h4>
     <code>console.log(0 ?? "Verdadero"); </code>
@@ -43,15 +43,42 @@
     <p>Cuando queremos acceder a un objeto que no existe, naturalmente nos retorna un error. Pero si usamos el operador <code>?</code> sobre la referencia, podemos condicionar su acceso y tener un mejor control del error. </p>
 
     <h3>Desestructuración de objetos</h3>
-    <p>Es una forma de extraer propiedades de un objeto y asignarlas a variables.</p>
+    <p>Es una forma de extraer propiedades de un objeto y asignarlas a variables. Se trabaja una copia del objeto, y convierte cada uno de los datos dentro del objeto a una variable independiente.</p>
     <ul>
-        <li>Se trabaja una copia del objeto, y convierte cada uno de los datos dentro del objeto a una variable independiente.</li>
         <li>Puedo declarar con const o let. Adentor de las llaves puedo poner el nombre de las propiedades que quiero extraer y en memoria  se crean esas variables a las cuales cuedo acceder de forma independiente después.</li>
         <li>Si llamo a una propiedad no definida, retorna undefined. </li>
+        <li>Si quiero cambiar el nombre de la variable que se crea, puedo hacerlo de la siguiente forma: <br>
+        <code>
+            let {nombre, apellido, edad, <b>curso:carrera</b>} = alumno; <br>
+            console.log(carrera); 
+        </code></li>
+
     </ul>
     <h4>Estructura</h4>
     <code>let {nombre, apellido, edad, curso} = alumno; <br>
         console.log(nombre); </code>
+
+    <h3>Desestructuración por parámetros</h3>
+    <p>Es una forma de desestructurar un objeto que se pasa como parámetro a una función </p>
+    <h4>Estructura</h4>
+    <code>
+        const saludar = ({nombre, apellido, edad}) => { <br>
+            console.log(`Hola ${nombre}${apellido} tienes ${edad} años`); <br>
+        } <br>
+        saludar(alumno); 
+    </code>
+    <h3>Desestructuración de array</h3>
+    <p>Esto es una forma de extraer elementos de un array, trabaja por orden, es decir, el primer valor del array se ubicará en la primera variable que coloquemos, y así sucesivamente.</p>
+    <ul>
+        <li>Si quieres saltar un valor, es decir no pasarlo a variable, entonces, se deja el espacio libre: <code>
+            let [uno, , tres, , cinco] = array; 
+        </code></li>
+    </ul>
+    <h4>Estructura</h4>
+    <code>
+        let arrayNumeros = [1, 2, 3,4, 5]; <br>
+        let [primero, segundo, tercero, cuarto, quinto] = arrayNumeros; 
+    </code>
     <script src="main.js"></script>
 </body>
 </html>

@@ -49,14 +49,14 @@ console.log(1 || "Verdadero");
 // Ejemplo: Lo utilizamos para pedir datos al usuario
 let nombreAlumno; 
 //let nombre = prompt("Ingrese su nombre:"); 
-console.log(nombre || "El usuario no ingresó su nombre"); 
+console.log(nombreAlumno || "El usuario no ingresó su nombre"); 
 
 
 //OPERADOR NULLISH
 
 console.log(0 ?? "Verdadero"); 
 nombreAlumno = prompt("Ingrese su nombre:") ?? "Cliente Anónimo"; 
-console.log(nombre); 
+console.log(nombreAlumno); 
 
 //ACCESO CONDICIONAL A UN OBJETO
 
@@ -85,5 +85,37 @@ let alumnoEdad = alumno.edad;
 let alumnoCurso = alumno.curso; 
 
 //DESPUÉS
-let {nombre, apellido, edad, curso} = alumno; 
+let {nombre, apellido, edad, curso:carrera} = alumno; 
 console.log(nombre); 
+console.log(carrera); 
+
+
+//Otro ejemplo
+const gato = {
+    duenio: "Juan", 
+    raza: "Felino", 
+    edad: 5, 
+    direccion: {
+        calle: "Avenida Siempre Viva",
+        numero: 123, 
+        ciudad: "Springfield" 
+    }
+}; 
+
+let {duenio, raza, edad:edadGato, direccion:{calle, numero, ciudad}} = gato; 
+
+console.log(calle); 
+console.log(edadGato); 
+
+// DESESTRUCTURACION POR PARÁMETROS: 
+
+const saludar = ({nombre, apellido, edad}) => {
+    console.log(`Hola ${nombre}${apellido} tienes ${edad} años`);
+}
+saludar(alumno); 
+
+
+//DESESTRUCTURACIÓN DE ARRAYS
+
+let arrayNumeros = [1, 2, 3,4, 5]; 
+let [primero, segundo, tercero, cuarto, quinto] = arrayNumeros; 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 12 - Operadores</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Clase 12 - Operadores</h1>
+
+    <h3>Operador Ternario</h3>
+    <p>Se utiliza una condición, la condición resuelve <b>true o false</b>. En el caso uno, se escribe la instrucción a ejecutar si es verdadero, y en el caso 2, si es falsa.</p>
+    <ul>
+        <li>El operador ternario ya tiene un <code>return</code> implícito, es decir, que me resulta muy útil retornar un dato </li>
+        <li>Un caso muy utilizado es para levantar un array del local storage</li>
+    </ul>
+
+    <h3>Operador Lógico <code>&&</code> AND</h3>
+    <p>Si la condición es verdadera, devuelve el valor de la segunda parte, es una simplificación del condicional <b>if</b>, en una sola línea de código.</p>
+    <ul>
+        <li>También me sirve para retornar valores, ejemplo: <code>let vacio = carrito.length === 0 && "Esto está vacío"; </code> Lo que se dice es que si el carrito no contiene valores, entonces, almacene el string "Esto está vacío" en la variable <b>vacio</b></li>
+    </ul>
+    <h4>Estructura</h4>
+    <p>Lo que dice es: Si la variable nombreCliente es estrictamente igual a "Samuel", entonces, ejecuta el alert. Sino, el código no se ejecuta.</p>
+    <code>nombreCliente === "Samuel" && alert("Bienvenido Samuel"); </code>
+
+    <h3>Operador Lógico || OR</h3>
+    <p>Ahora trabajamos con dos operandos y ya no tenemos una condición explícita. Entonces devuelve el primer valor que sea verdadero</p>
+    <ul>
+        <li>Lo podemos utilizar para pedir datos al usuario, por ejemplo: <br><code>let nombre = prompt("Ingrese su nombre:"); <br>
+            console.log(nombre || "El usuario no ingresó su nombre"); </code></li>
+    </ul>
+    <span>Tenemos que saber que en JS se denomina <b>valores "falsy"</b> a los siguientes: <code>false, 0, "", null, undefined, NaN</code></span>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>

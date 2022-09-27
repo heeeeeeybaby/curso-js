@@ -47,6 +47,43 @@ console.log(0 || "Verdadero");
 console.log(1 || "Verdadero"); 
 
 // Ejemplo: Lo utilizamos para pedir datos al usuario
-
-let nombre = prompt("Ingrese su nombre:"); 
+let nombreAlumno; 
+//let nombre = prompt("Ingrese su nombre:"); 
 console.log(nombre || "El usuario no ingresó su nombre"); 
+
+
+//OPERADOR NULLISH
+
+console.log(0 ?? "Verdadero"); 
+nombreAlumno = prompt("Ingrese su nombre:") ?? "Cliente Anónimo"; 
+console.log(nombre); 
+
+//ACCESO CONDICIONAL A UN OBJETO
+
+const cliente = null; 
+console.log("Acceso condicional"); 
+
+// Me retornará el error si ocupo: 
+//console.log(cliente.nombre || "El cliente no existe"); 
+
+// Pero puedo mejorar esto así: 
+console.log(cliente?.nombre || "El cliente no existe"); 
+
+//DESESTRUCTURACION
+
+const alumno = {
+    nombre: "Juan",
+    apellido: "Perez", 
+    edad: 25, 
+    curso: "Javascript"
+}; 
+
+//ANTES 
+let alumnoNombre = alumno.nombre; 
+let alumnoApellido = alumno.apellido; 
+let alumnoEdad = alumno.edad; 
+let alumnoCurso = alumno.curso; 
+
+//DESPUÉS
+let {nombre, apellido, edad, curso} = alumno; 
+console.log(nombre); 

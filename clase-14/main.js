@@ -24,3 +24,20 @@ for (let letra of "Hola Mundo"){
     console.log(letra);         
     }, 3000)
 }
+
+// SET INTERVAL 
+
+/* setInterval(()=>{
+    console.log("Tic"); 
+}, 1000) */
+
+
+let contador = 0; 
+const interval = setInterval(()=>{
+    console.log("Tuki"); 
+    contador++; 
+
+    if(contador == 5){
+        clearInterval(interval); 
+    }
+}, 2000);

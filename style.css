@@ -10,6 +10,9 @@ button a {
 code{
     color: blueviolet;
 }
+img{
+    margin: 2rem auto;
+}
 hr:first-of-type{
     margin-top: 3rem;
 }

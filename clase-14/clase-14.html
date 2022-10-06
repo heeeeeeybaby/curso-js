@@ -13,6 +13,7 @@
 
     <h3>Uso de <code>setTimeOut</code></h3>
     <p>Nos permite hacer tareas con un delay de tiempo específico. Es posible utilizarlo incluso en un array. </p>
+    
 
     <h4>Estructura</h4>
     <code>
@@ -20,6 +21,7 @@
             document.body.style.backgroundColor = "bisque"; <br>
         }, 3000)
     </code>
+    <div id="ejemplo1" class="ejemplo"> <p>Se muestra así</p></div>
 
     <h3>Uso de <code>setInterval</code></h3>
     <p>Esta función tiene la misma sintáxis que <code>setTimeOut</code>, pero la unidad de tiempo es un intervalo para la repetición de la función asociada, es decir me permite ejecutar tareas de forma reiterada, cada una cantidad determinada de tiempo. </p>
@@ -32,8 +34,49 @@
     </code>
     <h4>¿Cómo se detiene el intervalo?</h4>
     <p>Se utiliza el <code>clearInterval()</code> que permite definir cuándo se detendrá el intervalo. </p>
+
+    <div id="ejemplo2" class="ejemplo"><p>Se muestra así</p></div>
+
+    <h3>Promesas</h3>
+    <p>¿Qués es una promesa? Es un ofrecimiento a futuro, que puede tener dos resultados posible: cumple o no. Una promesa en JS es un objeto que representa un evento a futuro, es una <b>acción asincrónica</b> que se puede completar en algun momento, es nuestra forma de <b>trabajar con servidores</b></p>
+    <code>
+        class Usuario { <br>
+            constructor(user, password){ <br>
+                this.user = user, <br>
+                this.password = password <br>
+            } <br>
+        } <br>
+        const user1 = new Usuario("user1", 1234); <br>
+        const user2 = new Usuario("user2", 1234); <br>
+        const admin = new Usuario("admin", 4321); <br>
+        const usuarios = [user1, user2, admin]; <br>
+        const solicitarUsuarios = (estado) => { <br>
+            return new Promise((resuelto, rechazado)=>{ <br>
+                if(estado == true){ <br>
+                    resuelto(usuarios); <br>
+                }else{ <br>
+                    rechazado("Seguí intentando"); <br>
+                } <br>
+            }) <br>
+        } <br>
+    </code>
+    <span>Una promesa puede ser <b>Fulfilled</b> es decir, completada o <b>Rejected</b>, rechazada, o bien <b>pending</b>, es decir pendiente, a la espera.</span>
+
+    <h3>Then y Catch</h3>
+    <p><code>.then()</code> se ejecuta cuando la promesa se cumple y cuando la promesa se rechaza, su valor se captura dentro de un <code>.catch()</code> luego de esto, se puede ejecuta un <code>.finally()</code> que <b>siempre se ejecuta</b> independiente del resultado de la promesa.</p>
+    
     <h2>Javascript behind the scenes</h2>
     <p>Aquí se explican 2 conceptos para entender cómo funciona Javascript por dentro</p>
+    <h4>Estructura</h4>
+    <code>
+        solicitarUsuarios(true) <br>
+        .then((usuarios)=> { <br>
+            console.table(usuarios); <br>
+        }) <br>
+        .catch((error)=>{ <br>
+            console.error(error); <br>
+        }) <br>
+    </code>
     <h3>Call Stack</h3>
     <p>Es una lista donde se apilan las fistintas tareas a ejecutar por nuestro programa. Javascript es un <b>lenguaje single threaded</b>, o de un único hilo, lo que significa que tiene un único stacj o pila de ejecución, de ají que la ejecución es implícitamente asincrónica.</p>
     <span>Imagina una pila de platos esperando a ser lavados, cuál sacas primero? A pesar de que el que está más abajo es el primero, no será el primero en ser ejecutado. Esto se llama <b>LIFO, Last in, first out</b></span>
@@ -42,6 +85,8 @@
     <h3>Event Loop</h3>
     <p>Es un bucle de eventos que se encarga de revisar la cola de tareas para ordenarlas y ejecutarlas. <b>Es un ente invisible</b>m es para entender cómo funciona realmente JS. </p>
     <hr>
+
+
     <h4><a href="../index.html">Volver al Index</a></h4>
     <hr>
 <script src="main.js"></script>

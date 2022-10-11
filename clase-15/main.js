@@ -64,3 +64,22 @@ setInterval(()=> {
         })
         .catch(error => console.error(error))
 }, 3000)
+
+/***********RUTAS RELATIVAS***************/
+
+const listado = document.getElementById("listado"); 
+const listadoProductos = "json/productos.json"; 
+
+fetch(listadoProductos)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        datos.forEach(producto => {
+            listado.innerHTML += `
+                <h3>Nombre: ${producto.nombre}</h3>
+                <strong>Precio: ${producto.precio}</strong>
+                <strong> ID: ${producto.id}</strong>
+            `   
+        })
+        .catch(error => console.error(error))
+        .finally(() => console.log("Proceso Finalizado"));
+    })
